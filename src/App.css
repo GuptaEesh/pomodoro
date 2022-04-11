@@ -1,0 +1,110 @@
+:root{
+  --dark-bg:black;
+  --primary-color:#007AFF;
+  --secondary-color:#7CEA9C;
+  --white:white;
+}
+body {
+  height: 100vh;
+}
+
+.gap-1{
+  gap:1rem;
+}
+.gap-2{
+  gap:2rem;
+}
+.gap-4{
+  gap:4rem;
+}
+.gap-px-10{
+gap: 10px;
+}
+.padding-1{
+padding: 1rem;
+}
+.padding-2{
+padding: 2rem;
+}
+.margin-1{
+margin: 1rem;
+}
+.margin-2{
+margin: 2rem;
+}
+.margin-top-1{
+margin-top: 1rem;
+}
+.margin-top-2{
+margin-top: 2rem;
+}
+.margin-top-8{
+margin-top: 8rem;
+}
+.position-relative{
+position: relative;
+}
+.position-fixed{
+position: fixed;
+}
+.position-absolute{
+position: absolute;
+}
+.height-max-content{
+height: max-content;
+}
+.width-max-content{
+width: max-content;
+}
+.height-fit-content{
+height: fit-content;
+}
+.width-fit-content{
+width: fit-content;
+}
+.cursor-pointer{
+cursor: pointer;
+}
+.flex-1{
+flex: 1;
+}
+
+.flex-2{
+flex: 2;
+}
+
+.flex-3{
+flex: 3;
+}
+
+.flex-4{
+flex: 4;
+}
+
+.flex-5{
+flex: 5;
+}
+.width-r-80{
+width: 80vw;
+}
+.width-r-100{
+width: 100vw;
+}
+.width-p-100{
+width: 100%;
+}
+.width-p-80{
+width: 80%;
+}
+.height-p-80{
+  height: 80%;
+}
+.height-r-80{
+  height: 80vh;
+}
+.text-white{
+  color: var(--white);
+}
+.text-neon{
+  color: var(--secondary-color);
+}
