@@ -1,0 +1,12 @@
+.secondary-link{
+    color: var(--white);
+}
+
+@media all and (max-width:600px) {
+    .header{
+        flex-direction: column;
+    }
+    .right-header,.right-header .input-text{
+        width: 100%;
+    }
+}
