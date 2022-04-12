@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../components";
-import "./pomodoro-app-screen/pomodoro-app-screen.css";
+import "./screen.css";
 const FocusScreen = () => {
   return (
     <div className="flex gap-4 align-center flex-column padding-1 text-combo pomodoro-screen">

@@ -1,0 +1,21 @@
+.range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--white);
+    border-radius: 4px;
+    height: 6px;
+    width: 100%;
+    
+}
+
+.range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: var(--size-14);
+    height: var(--size-14);
+    background: var(--primary-color);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    z-index: 2;
+}

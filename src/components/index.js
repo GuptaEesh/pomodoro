@@ -1,2 +1,2 @@
 export { Button, Input } from "./atoms";
-export { Header } from "./organisms";
+export { Header, SettingsSlider } from "./organisms";
