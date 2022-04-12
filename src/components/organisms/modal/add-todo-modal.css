@@ -1,0 +1,18 @@
+.todo-modal{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    position: fixed;
+}
+.todo-form{
+    border-radius: 10px;
+    background-color: #c1f5d0;
+    width: 22rem;
+    height: 60vh;
+}
+.todo-form textarea{
+    width: 100%;
+}

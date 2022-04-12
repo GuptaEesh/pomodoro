@@ -119,3 +119,16 @@ width: 80%;
 .position-right{
   right: 0;
 }
+.primary-pomodoro-btn{
+  background-color: var(--secondary-color);
+  width: 12rem;
+  transition:all 0.3s ease-in-out;
+}
+.secondary-pomodoro-btn{
+  background-color: var(--dark-bg);
+  width: 12rem;
+}
+.primary-pomodoro-btn:hover{
+  background-color: var(--dark-bg);
+  color:  var(--secondary-color);
+}

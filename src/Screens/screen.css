@@ -29,14 +29,7 @@
 .timer{
     font-size: calc(200px);
 }
-.primary-pomodoro-btn{
-    background-color: var(--secondary-color);
-    width: 12rem;
-}
-.secondary-pomodoro-btn{
-    background-color: var(--dark-bg);
-    width: 12rem;
-}
+
 .focus-description{
     word-wrap: break-word;
     width: 80vw;

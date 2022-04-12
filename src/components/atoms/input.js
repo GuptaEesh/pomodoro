@@ -23,6 +23,7 @@ const Input = ({
       value={inputValue}
       onChange={inputFunc}
       list={listInput}
+      required
     />
   );
 };
