@@ -24,6 +24,7 @@ body {
 .gap-px-10{
 gap: 10px;
 }
+  
 .padding-1{
 padding: 1rem;
 }
@@ -111,6 +112,9 @@ width: 80%;
 }
  .text-combo{
   color: var(--primary-color);
+}
+ .text-combo-2{
+  color: var(--secondary-color);
 }
 .position-right{
   right: 0;
