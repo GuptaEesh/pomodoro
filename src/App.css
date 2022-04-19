@@ -3,6 +3,12 @@
   --primary-color:#006D77;
   --secondary-color:#7CEA9C;
   --white:white;
+  --lighter-secondary:#c1f5d0;
+}
+.mode-light{
+  --primary-color:#b45427;
+  --secondary-color:rgb(248, 205, 205);
+  --white:#2acedd;
 }
 body {
   height: 100vh;
