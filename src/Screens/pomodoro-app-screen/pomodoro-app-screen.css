@@ -3,6 +3,7 @@
     height: 100vh;
     overflow-y: auto;
     border-radius: var(--size-12);
+    overflow: hidden;
 }
 .hr{
     width: 100%;
@@ -10,10 +11,45 @@
 }
 .todo-container{
     padding: 0 clamp(5%,2%,20%);
+    overflow-y: auto;
 }
 .todo{
     transition: background-color 0.3s ease-in;
 }
 .todo:hover{
     background-color: var(--white);
+}
+.focus-screen{
+    min-width:60%;
+    max-width: 98%;
+    border-radius: var(--size-12);
+    background-color: #c1f5d0;
+    height:60%;
+}
+.timer{
+    font-size: calc(200px);
+}
+.primary-pomodoro-btn{
+    background-color: var(--secondary-color);
+    width: 12rem;
+}
+.secondary-pomodoro-btn{
+    background-color: var(--dark-bg);
+    width: 12rem;
+}
+.focus-description{
+    word-wrap: break-word;
+    width: 80vw;
+    overflow: auto;
+    height: 5rem;
+}
+@media all and (max-width:700px){
+    .timer{
+        font-size: 6em;
+    }
+}
+@media all and (max-width:500px){
+    .timer{
+        font-size: 4em;
+    }
 }
