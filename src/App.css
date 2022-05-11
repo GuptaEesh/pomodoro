@@ -1,13 +1,17 @@
 :root{
   --dark-bg:black;
-  --primary-color:#007AFF;
+  --primary-color:#006D77;
   --secondary-color:#7CEA9C;
   --white:white;
 }
 body {
   height: 100vh;
+  background-color: var(--dark-bg);
 }
-
+.app-container{
+  margin: clamp(2vw,5vw,20vw);
+  margin-top: 0;
+}
 .gap-1{
   gap:1rem;
 }
@@ -102,9 +106,12 @@ width: 80%;
 .height-r-80{
   height: 80vh;
 }
-.text-white{
+ .text-white{
   color: var(--white);
 }
-.text-neon{
-  color: var(--secondary-color);
+ .text-combo{
+  color: var(--primary-color);
+}
+.position-right{
+  right: 0;
 }

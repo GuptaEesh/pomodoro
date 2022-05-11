@@ -1,0 +1,19 @@
+.pomodoro-screen{
+    background-color: var(--secondary-color);
+    height: 100vh;
+    overflow-y: auto;
+    border-radius: var(--size-12);
+}
+.hr{
+    width: 100%;
+    border-bottom: 2px solid var(--primary-color);
+}
+.todo-container{
+    padding: 0 clamp(5%,2%,20%);
+}
+.todo{
+    transition: background-color 0.3s ease-in;
+}
+.todo:hover{
+    background-color: var(--white);
+}
