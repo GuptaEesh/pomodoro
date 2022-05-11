@@ -13,8 +13,26 @@
     min-width: 14rem;
     max-width: 22rem;
     margin: 1rem;
-    height: 60vh;
+    height: 70vh;
 }
 .todo-form textarea,.todo-form .input-text{
     width: 100%;
+}
+.tag-container{
+    background-color: var(--primary-100);
+    backdrop-filter: blur(10px);
+    top:100%;  
+    width:100%;
+    max-height:5rem;
+    overflow-y: auto;
+}
+.drop-down{
+    right:10px;
+    top:45%;
+}
+.tag-option{
+    color:var(--primary-color);
+    border-bottom: 2px solid var(--primary-200);
+    width: 100%;
+    margin-bottom: 10px;
 }

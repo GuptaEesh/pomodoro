@@ -14,20 +14,54 @@
     overflow-y: auto;
 }
 .todo{
-    transition: background-color 0.3s ease-in;
+    border-bottom:2px solid var(--white);
+    margin-bottom:10px;
+    padding: 5px 1rem;
 }
-.todo:hover{
+.done{
+    background-color: var(--lighter-secondary);
+}
+.pending{
+    background-color: rgb(248, 213, 207);
+}
+.task-name{
+    padding: 10px;
+    transition: background-color 0.4s ease-in-out;
+    height: 100%;
+}
+.task-name:hover{
+    background-color: var(--white);
+}
+.tag-selected{
+    color:var(--white);
+    background-color: var(--primary-color);
+}
+.tag-present{
+    color:var(--primary-color);
     background-color: var(--white);
 }
 .focus-screen{
     min-width:60%;
     max-width: 98%;
     border-radius: var(--size-12);
-    background-color: #c1f5d0;
+    background-color: var(--lighter-secondary);
     height:60%;
 }
 .timer{
-    font-size: calc(200px);
+    width: 100%;
+}
+.timer span{
+    width:100%;
+    font-size: 200px;
+}
+.timer span:nth-child(1){
+    justify-content: end;
+}
+.timer span:nth-child(2){
+    width:fit-content
+}
+.timer span:nth-child(3){
+    justify-content: start;
 }
 
 .focus-description{
@@ -36,15 +70,37 @@
     overflow: auto;
     height: 5rem;
 }
-
-
+.tag-container{
+    padding:0 2rem;
+    border:1px solid var(--white)
+}
+.tag-info{
+    word-break: break-all;
+    }
+.tag-holder{
+    border-radius: 10px;
+    padding: 5px;
+    background-color:var(--white);
+}
+.tag-name{
+    padding-left: 1.5rem;
+}
+.tag-tagged{
+    left:0;
+}
+.eg-chips{
+    padding: 0 clamp(5%,2%,20%);
+    margin-bottom:-2rem;
+}
 @media all and (max-width:700px){
-    .timer{
-        font-size: 6em;
+    .timer span{
+        /* width:8rem; */
+        font-size: 5em;
     }
 }
 @media all and (max-width:500px){
-    .timer{
-        font-size: 4em;
+    .timer span{
+        /* width:4rem; */
+        font-size: 2em;
     }
 }
