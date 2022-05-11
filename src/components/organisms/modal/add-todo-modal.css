@@ -1,0 +1,20 @@
+.todo-modal{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    position: fixed;
+}
+.todo-form{
+    border-radius: 10px;
+    background-color: #c1f5d0;
+    min-width: 14rem;
+    max-width: 22rem;
+    margin: 1rem;
+    height: 60vh;
+}
+.todo-form textarea,.todo-form .input-text{
+    width: 100%;
+}

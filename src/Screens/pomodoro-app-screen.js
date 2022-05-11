@@ -1,13 +1,16 @@
 import React from "react";
 import { AiFillPlusCircle, AiTwotoneEdit, AiFillDelete } from "react-icons/ai";
 import "./screen.css";
-const PomoDoroApp = () => {
+const PomoDoroApp = ({ setIsModalOpen }) => {
   return (
     <div className="pomodoro-screen flex gap-4 flex-column padding-1 text-combo">
       <div className="gap-1 flex flex-column">
         <section className="flex gap-1 align-center justify-space-between">
           <h2 className="size-16">Generate ToDo</h2>
-          <AiFillPlusCircle className="cursor-pointer size-16" />
+          <AiFillPlusCircle
+            onClick={() => setIsModalOpen(true)}
+            className="cursor-pointer size-16"
+          />
         </section>
         <div className="hr"></div>
       </div>
