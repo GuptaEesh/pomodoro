@@ -75,9 +75,8 @@ const FocusScreen = () => {
         <span>
           Mode :-
           <span className="bold" style={{ color: bgMoodColor }}>
-            {" "}
             {bgTitle}
-          </span>{" "}
+          </span>
         </span>
         <section className="timer flex">
           <span className="flex">
