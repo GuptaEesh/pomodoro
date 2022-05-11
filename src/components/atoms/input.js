@@ -6,6 +6,10 @@ const Input = ({
   inputPlaceHolder,
   inputType,
   inputValue,
+  min,
+  max,
+  step,
+  listInput,
 }) => {
   return (
     <input
@@ -13,8 +17,12 @@ const Input = ({
       type={inputType}
       placeholder={inputPlaceHolder}
       aria-label={inputType}
+      min={min}
+      max={max}
+      step={step}
       value={inputValue}
       onChange={inputFunc}
+      list={listInput}
     />
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillPlusCircle, AiTwotoneEdit, AiFillDelete } from "react-icons/ai";
-import "./pomodoro-app-screen.css";
+import "./screen.css";
 const PomoDoroApp = () => {
   return (
     <div className="pomodoro-screen flex gap-4 flex-column padding-1 text-combo">
