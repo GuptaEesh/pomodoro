@@ -68,9 +68,7 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
         ))}
       </div>
       <div className="todo-container">
-        {!filteredTodo.length ? (
-          <EmptyPage />
-        ) : tagNameArray.length === 0 ? (
+        {tagNameArray.length === 0 ? (
           <h1 className="flex flex-column align-center gap-2 lg">
             Add To-Do's and get started for the day.
             <Button
@@ -79,6 +77,8 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
               btnFunc={() => setIsModalOpen(true)}
             />
           </h1>
+        ) : !filteredTodo.length ? (
+          <EmptyPage />
         ) : (
           filteredTodo?.map((task) => (
             <section
