@@ -15,7 +15,6 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
   const { todoState, dispatchToDo } = useData();
   const { todo, searchTerm } = todoState;
   const [selectedTag, setSelectedTag] = useState("All");
-  console.log(searchTerm);
   useEffect(() => {
     window.document.title = "Pomo Home";
   }, []);
