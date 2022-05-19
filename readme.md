@@ -13,6 +13,7 @@ Features :-
 - Long Break Button
 - Settings screen to adjust short and long breaks
 - Search Functionality
+- Data persistence using LocalStorage
 - Dark/Light Mode
 - 404 Page
 
