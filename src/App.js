@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AddToDoModal, Header } from "./components";
-import { FocusScreen, PomoDoroApp, Settings } from "./Screens";
+import { FocusScreen, PomoDoroApp, Settings, ErrorPage } from "./Screens";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,6 +52,7 @@ function App() {
           />
           <Route path="/settings" element={<Settings />} />
           <Route path="/task/:id" element={<FocusScreen />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </div>

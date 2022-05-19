@@ -7,6 +7,7 @@ const initial = {
   todo: todoSettings.todo,
   shortBreak: todoSettings.shortBreak,
   longBreak: todoSettings.longBreak,
+  searchTerm: "",
 };
 const todoReducer = (todoState, action) => {
   switch (action.type) {
@@ -42,6 +43,16 @@ const todoReducer = (todoState, action) => {
             ? { ...task, isDone: !action.payload.isDone }
             : task
         ),
+      };
+    case "UPDATE_SEARCH":
+      return {
+        ...todoState,
+        searchTerm: action.payload,
+      };
+    case "RESET_SEARCH":
+      return {
+        ...todoState,
+        searchTerm: "",
       };
 
     default:

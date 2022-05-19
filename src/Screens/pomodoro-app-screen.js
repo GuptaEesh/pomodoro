@@ -9,17 +9,20 @@ import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components";
 import { useData } from "../helper";
+import { EmptyPage } from "./empty-page";
 import "./screen.css";
 const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
   const { todoState, dispatchToDo } = useData();
-  const { todo } = todoState;
+  const { todo, searchTerm } = todoState;
   const [selectedTag, setSelectedTag] = useState("All");
+  console.log(searchTerm);
   useEffect(() => {
     window.document.title = "Pomo Home";
   }, []);
   let filteredTodo = todo.filter((todo) =>
     todo.tag === selectedTag ? todo : selectedTag === "All" && todo
   );
+  filteredTodo = filteredTodo.filter((todo) => todo.name.includes(searchTerm));
   const navigate = useNavigate();
   const editTodoHandler = (task) => {
     setIsModalOpen(true);
@@ -65,7 +68,9 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
         ))}
       </div>
       <div className="todo-container">
-        {tagNameArray.length === 0 ? (
+        {!filteredTodo.length ? (
+          <EmptyPage />
+        ) : tagNameArray.length === 0 ? (
           <h1 className="flex flex-column align-center gap-2 lg">
             Add To-Do's and get started for the day.
             <Button
