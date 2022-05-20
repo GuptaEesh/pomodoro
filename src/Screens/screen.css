@@ -25,12 +25,14 @@
     background-color: rgb(248, 213, 207);
 }
 .task-name{
+    border-radius: 2rem;
     padding: 10px;
     transition: background-color 0.4s ease-in-out;
     height: 100%;
+    margin-left:10px;
 }
 .task-name:hover{
-    background-color: var(--white);
+    background-color: var(--lighter-secondary);
 }
 .tag-selected{
     color:var(--white);
