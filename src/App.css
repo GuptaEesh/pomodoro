@@ -138,3 +138,6 @@ width: 80%;
   background-color: var(--dark-bg);
   color:  var(--secondary-color);
 }
+.justify-space-around{
+  justify-content: space-around;
+}

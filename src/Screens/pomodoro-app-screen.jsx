@@ -9,10 +9,11 @@ import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components";
 import { useData } from "../helper";
+import { EmptyPage } from "./empty-page";
 import "./screen.css";
 const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
   const { todoState, dispatchToDo } = useData();
-  const { todo } = todoState;
+  const { todo, searchTerm } = todoState;
   const [selectedTag, setSelectedTag] = useState("All");
   useEffect(() => {
     window.document.title = "Pomo Home";
@@ -20,6 +21,7 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
   let filteredTodo = todo.filter((todo) =>
     todo.tag === selectedTag ? todo : selectedTag === "All" && todo
   );
+  filteredTodo = filteredTodo.filter((todo) => todo.name.includes(searchTerm));
   const navigate = useNavigate();
   const editTodoHandler = (task) => {
     setIsModalOpen(true);
@@ -74,6 +76,8 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
               btnFunc={() => setIsModalOpen(true)}
             />
           </h1>
+        ) : !filteredTodo.length ? (
+          <EmptyPage />
         ) : (
           filteredTodo?.map((task) => (
             <section
