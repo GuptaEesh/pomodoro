@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { addTask, updateTask, useAuth, useData } from "../../../helper";
 import { Button, Input } from "../../atoms";
-import { v4 as uuid } from "uuid";
 import "./add-todo-modal.css";
 const AddToDoModal = ({ task, setTask, setIsModalOpen, setLoader }) => {
   const { dispatchToDo, todoState } = useData();
