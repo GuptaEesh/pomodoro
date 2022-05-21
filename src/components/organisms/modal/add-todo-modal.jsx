@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { useData } from "../../../helper";
+import { addTask, updateTask, useAuth, useData } from "../../../helper";
 import { Button, Input } from "../../atoms";
 import { v4 as uuid } from "uuid";
 import "./add-todo-modal.css";
-const AddToDoModal = ({ task, setTask, setIsModalOpen }) => {
+const AddToDoModal = ({ task, setTask, setIsModalOpen, setLoader }) => {
   const { dispatchToDo, todoState } = useData();
   const { todo } = todoState;
+  const { token } = useAuth();
   const formHandler = (e) => {
     e.preventDefault();
-    dispatchToDo({ type: "ADD_TODO", payload: task });
+    task.isEdit
+      ? updateTask(token, task, dispatchToDo, setLoader)
+      : addTask(token, task, dispatchToDo, setLoader);
     setTask({ name: "", duration: null, description: "" });
     setIsModalOpen(false);
   };
@@ -111,7 +114,6 @@ const AddToDoModal = ({ task, setTask, setIsModalOpen }) => {
                       ...task,
                       isEdit: false,
                       isDone: false,
-                      id: uuid(),
                     }))
             }
             btnText={task.isEdit ? "Update" : "Add"}

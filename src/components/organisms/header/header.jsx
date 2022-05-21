@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Input } from "../../atoms";
 import { BsSearch, BsFillSunFill } from "react-icons/bs";
-import { AiFillSetting } from "react-icons/ai";
+import { AiFillSetting, AiOutlineLogout } from "react-icons/ai";
 import { MdNightlightRound } from "react-icons/md";
 import "./header.css";
 import ReactLoading from "react-loading";
-import { useData } from "../../../helper";
+import { useAuth, useData } from "../../../helper";
 const Header = ({ loader, theme, toggleTheme }) => {
   const [value, setValue] = useState("");
   const { dispatchToDo } = useData();
+  const { logout } = useAuth();
   const openSearch = () => {
     value.length && dispatchToDo({ type: "UPDATE_SEARCH", payload: value });
     setValue("");
@@ -47,6 +48,10 @@ const Header = ({ loader, theme, toggleTheme }) => {
         <Link to="/settings">
           <AiFillSetting className="text-white cursor-pointer" />
         </Link>
+        <div className="flex align-center cursor-pointer" onClick={logout}>
+          <AiOutlineLogout className="text-white " />
+          <h2 className="text-white sm">Logout</h2>
+        </div>
         <div className="theme-container">
           {loader ? (
             <ReactLoading

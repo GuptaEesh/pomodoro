@@ -14,16 +14,7 @@ const todoReducer = (todoState, action) => {
     case "ADD_TODO":
       return {
         ...todoState,
-        todo: action.payload.isEdit
-          ? todoState.todo.map((task) =>
-              task.id === action.payload.id ? action.payload : task
-            )
-          : [...todoState.todo, action.payload],
-      };
-    case "DELETE_TODO":
-      return {
-        ...todoState,
-        todo: todoState.todo.filter((task) => task.id !== action.payload.id),
+        todo: action.payload,
       };
     case "SET_BREAK":
       return action.payload.name === "Short Break"
@@ -39,7 +30,7 @@ const todoReducer = (todoState, action) => {
       return {
         ...todoState,
         todo: todoState.todo.map((task) =>
-          task.id === action.payload.id
+          task._id === action.payload._id
             ? { ...task, isDone: !action.payload.isDone }
             : task
         ),

@@ -16,7 +16,7 @@ const FocusScreen = () => {
   const { todoState } = useData();
   const [timerStatus, setTimerStatus] = useState("Start");
   const { todo, longBreak, shortBreak } = todoState;
-  const task = todo.find((openedTask) => openedTask.id === id);
+  const task = todo.find((openedTask) => openedTask._id === id);
   const initial = {
     runningTime: Number(task?.duration) * 60 || 0,
     intervalId: null,
