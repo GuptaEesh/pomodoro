@@ -1,41 +1,23 @@
 import React, { useEffect, useState } from "react";
-import {
-  AiFillPlusCircle,
-  AiTwotoneEdit,
-  AiFillDelete,
-  AiFillCloseCircle,
-} from "react-icons/ai";
-import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
-import { Button } from "../components";
-import { useData } from "../helper";
+import { AiFillPlusCircle } from "react-icons/ai";
+import { Button, SingleTaskContainer } from "../components";
+import { getAllNotes, useAuth, useData } from "../helper";
 import { EmptyPage } from "./empty-page";
 import "./screen.css";
-const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
+const PomoDoroApp = ({ setTask, setIsModalOpen, loader, setLoader }) => {
   const { todoState, dispatchToDo } = useData();
   const { todo, searchTerm } = todoState;
   const [selectedTag, setSelectedTag] = useState("All");
+  const { token } = useAuth();
   useEffect(() => {
     window.document.title = "Pomo Home";
+    getAllNotes(token, dispatchToDo, setLoader);
   }, []);
   let filteredTodo = todo.filter((todo) =>
     todo.tag === selectedTag ? todo : selectedTag === "All" && todo
   );
   filteredTodo = filteredTodo.filter((todo) => todo.name.includes(searchTerm));
-  const navigate = useNavigate();
-  const editTodoHandler = (task) => {
-    setIsModalOpen(true);
-    setTask({ ...task, isEdit: true });
-  };
-  const deleteTodoHandler = (task) => {
-    dispatchToDo({ type: "DELETE_TODO", payload: task });
-  };
-  const openTask = (task) => {
-    navigate(`/task/${task.id}`);
-  };
-  const handleDone = (task) => {
-    dispatchToDo({ type: "TASK_STATUS", payload: task });
-  };
+
   const reducerTodoTag = (acc, curr) =>
     acc.find((foundTag) => foundTag === curr.tag) ? acc : [...acc, curr.tag];
   const tagNameArray = todo.reduce(reducerTodoTag, []);
@@ -67,7 +49,11 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
         ))}
       </div>
       <div className="todo-container">
-        {tagNameArray.length === 0 ? (
+        {loader ? (
+          <h1 className="flex flex-column align-center gap-2 lg">
+            Loading your tasks...
+          </h1>
+        ) : tagNameArray.length === 0 ? (
           <h1 className="flex flex-column align-center gap-2 lg">
             Add To-Do's and get started for the day.
             <Button
@@ -80,26 +66,11 @@ const PomoDoroApp = ({ setTask, setIsModalOpen }) => {
           <EmptyPage />
         ) : (
           filteredTodo?.map((task) => (
-            <section
-              key={task.id}
-              className={`flex align-center cursor-pointer todo ${
-                !task.isDone ? "pending" : "done"
-              } justify-space-between`}
-            >
-              {task.isDone ? (
-                <IoCheckmarkDoneCircleSharp onClick={() => handleDone(task)} />
-              ) : (
-                <AiFillCloseCircle onClick={() => handleDone(task)} />
-              )}
-              <h4 onClick={() => openTask(task)} className="task-name flex-3">
-                {task.name}
-              </h4>
-              <AiTwotoneEdit
-                onClick={() => editTodoHandler(task)}
-                className="flex-1"
-              />
-              <AiFillDelete onClick={() => deleteTodoHandler(task)} />
-            </section>
+            <SingleTaskContainer
+              setTask={setTask}
+              task={task}
+              setIsModalOpen={setIsModalOpen}
+            />
           ))
         )}
       </div>

@@ -1,0 +1,11 @@
+.password-container{
+    width: max-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.pass-viewer{
+    right: 2%;
+    color:var(--primary-400);
+}

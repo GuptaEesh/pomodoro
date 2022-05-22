@@ -10,6 +10,9 @@
   --secondary-color:rgb(248, 205, 205);
   --white:#2acedd;
 }
+.text-dark{
+  color:var(--dark-bg);
+}
 body {
   height: 100vh;
   background-color: var(--dark-bg);

@@ -1,2 +1,9 @@
 export { Button, Input } from "./atoms";
-export { Header, SettingsSlider, AddToDoModal } from "./organisms";
+export {
+  Header,
+  SettingsSlider,
+  AddToDoModal,
+  InputPass,
+  InputSimple,
+  SingleTaskContainer,
+} from "./organisms";

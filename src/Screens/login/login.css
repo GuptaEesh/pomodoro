@@ -1,0 +1,42 @@
+.login-page{
+    height: 100vh;
+    background-image: linear-gradient(to left,var(--secondary-300),var(--red-400));
+}
+.sign-up-page{
+    height: 100vh;
+    background-image: linear-gradient(to left,var(--secondary-300),var(--red-400));
+}
+.sign-up-page form{
+    gap:10px;
+}
+.register-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.condition-checked{
+    text-decoration: line-through;
+}
+.guest-login{
+    width: 100%;
+}
+.guest-login:hover{
+    background-color: var(--secondary-200);
+    color: white;
+}
+.pass-checks-box{
+    border: 2px solid var(--primary-300);
+    padding: 10px;
+}
+.auth-button{
+    background-color: var(--secondary-200);
+    color:white;
+
+}
+@media all and (max-width:400px) {
+    .login-page form{
+        padding: 10px;
+    }
+    .sign-up-page form{
+        padding: 10px;
+    }
+}
