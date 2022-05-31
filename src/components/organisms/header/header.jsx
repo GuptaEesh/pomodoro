@@ -8,17 +8,19 @@ import "./header.css";
 import ReactLoading from "react-loading";
 import { useAuth, useData } from "../../../helper";
 const Header = ({ loader, theme, toggleTheme }) => {
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
   const { dispatchToDo } = useData();
   const { logout } = useAuth();
-  const openSearch = () => {
-    value.length && dispatchToDo({ type: "UPDATE_SEARCH", payload: value });
-    setValue("");
+  const debounceSearch = () => {
+    let timer;
+    return (e) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        dispatchToDo({ type: "UPDATE_SEARCH", payload: e.target.value });
+      }, 300);
+    };
   };
-  const inputHandler = (e) => setValue(e.target.value);
-  const clearSearch = () => {
-    dispatchToDo({ type: "RESET_SEARCH" });
-  };
+
   return (
     <div className=" flex header align-center margin-1 justify-space-between">
       <section className="flex align-center flex-1">
@@ -30,21 +32,11 @@ const Header = ({ loader, theme, toggleTheme }) => {
             inputClass="input-text md"
             inputType="text"
             inputPlaceHolder="Search"
-            inputValue={value}
-            inputFunc={inputHandler}
-          />
-          <BsSearch
-            onClick={openSearch}
-            className="position-absolute position-right search-icon cursor-pointer"
+            inputFunc={debounceSearch()}
           />
         </form>
       </section>
       <section className="flex align-center flex-1 right-header-nav justify-space-around">
-        <Button
-          btnFunc={clearSearch}
-          btnText="Clear Search"
-          btnClass="bold clear-search"
-        />
         <Link to="/settings">
           <AiFillSetting className="text-white cursor-pointer" />
         </Link>

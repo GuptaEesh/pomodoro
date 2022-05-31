@@ -16,7 +16,9 @@ const PomoDoroApp = ({ setTask, setIsModalOpen, loader, setLoader }) => {
   let filteredTodo = todo.filter((todo) =>
     todo.tag === selectedTag ? todo : selectedTag === "All" && todo
   );
-  filteredTodo = filteredTodo.filter((todo) => todo.name.includes(searchTerm));
+  filteredTodo = filteredTodo.filter((todo) =>
+    todo.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const reducerTodoTag = (acc, curr) =>
     acc.find((foundTag) => foundTag === curr.tag) ? acc : [...acc, curr.tag];

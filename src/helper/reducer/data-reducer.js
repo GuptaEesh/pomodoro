@@ -40,12 +40,6 @@ const todoReducer = (todoState, action) => {
         ...todoState,
         searchTerm: action.payload,
       };
-    case "RESET_SEARCH":
-      return {
-        ...todoState,
-        searchTerm: "",
-      };
-
     default:
       return todoState;
   }
