@@ -91,7 +91,7 @@ export function SignUp() {
           {error ? (
             <span className="text-red">{message}!</span>
           ) : (
-            <span className="text-dark">Good to go!</span>
+            <span className="text-dark vanish">Good to go!</span>
           )}
           <span className="text-dark">
             Already a customer?

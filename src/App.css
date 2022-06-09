@@ -13,6 +13,9 @@
 .text-dark{
   color:var(--dark-bg);
 }
+.vanish{
+opacity: 0;
+}
 body {
   height: 100vh;
   background-color: var(--dark-bg);
