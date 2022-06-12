@@ -40,11 +40,11 @@ const PomoDoroApp = ({ setTask, setIsModalOpen, loader, setLoader }) => {
       <div className="eg-chips">
         {["All", ...tagNameArray].map((tag) => (
           <h1
+            key={tag}
             onClick={() => setSelectedTag(tag)}
             className={`chip tag-${
               selectedTag === tag ? "selected" : "present"
             } bold md cursor-pointer justify-center`}
-            key={tag}
           >
             {tag.length > 4 ? tag.slice(0, 3) + "..." : tag}
           </h1>
@@ -69,6 +69,7 @@ const PomoDoroApp = ({ setTask, setIsModalOpen, loader, setLoader }) => {
         ) : (
           filteredTodo?.map((task) => (
             <SingleTaskContainer
+              key={task._id}
               setTask={setTask}
               task={task}
               setIsModalOpen={setIsModalOpen}

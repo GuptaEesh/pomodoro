@@ -35,8 +35,6 @@ function App() {
       700
     );
   };
-  // auth -- redirectauth
-  // simple -- requireauth
   return (
     <div className={theme.darkMode ? "App" : "App mode-light"}>
       <div className="app-container">
